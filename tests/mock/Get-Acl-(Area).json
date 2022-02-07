@@ -1,0 +1,701 @@
+{
+  "count": 13,
+  "value": [
+    {
+      "inheritPermissions": true,
+      "token": "vstfs:///Classification/Node/21516d2e-88a7-4ed5-87d5-f32f70056770",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023",
+          "allow": 49,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 49
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1",
+          "allow": 17,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798",
+          "allow": 17,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081",
+          "allow": 17,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 17
+          }
+        }
+      },
+      "includeExtendedInfo": true
+    },
+    {
+      "inheritPermissions": true,
+      "token": "vstfs:///Classification/Node/21516d2e-88a7-4ed5-87d5-f32f70056770:vstfs:///Classification/Node/077bbf52-daeb-4a70-84e2-42cd51d86936",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 49,
+            "effectiveAllow": 49
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1108018006-2005603403-2662719809-324093830": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1108018006-2005603403-2662719809-324093830",
+          "allow": 238,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 255
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        }
+      },
+      "includeExtendedInfo": true
+    },
+    {
+      "inheritPermissions": true,
+      "token": "vstfs:///Classification/Node/21516d2e-88a7-4ed5-87d5-f32f70056770:vstfs:///Classification/Node/077bbf52-daeb-4a70-84e2-42cd51d86936:vstfs:///Classification/Node/bb6d8da3-477f-49db-8faa-0346c55e9ee6",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 49,
+            "effectiveAllow": 49
+          }
+        },
+        "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500": {
+          "descriptor": "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500",
+          "allow": 3,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 255
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1108018006-2005603403-2662719809-324093830": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1108018006-2005603403-2662719809-324093830",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 238,
+            "effectiveAllow": 255
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        }
+      },
+      "includeExtendedInfo": true
+    },
+    {
+      "inheritPermissions": true,
+      "token": "vstfs:///Classification/Node/21516d2e-88a7-4ed5-87d5-f32f70056770:vstfs:///Classification/Node/1dc5c8ea-0fc3-48b3-9301-78fc777c17d0",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 49,
+            "effectiveAllow": 49
+          }
+        },
+        "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500": {
+          "descriptor": "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500",
+          "allow": 3,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 19
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        }
+      },
+      "includeExtendedInfo": true
+    },
+    {
+      "inheritPermissions": true,
+      "token": "vstfs:///Classification/Node/21516d2e-88a7-4ed5-87d5-f32f70056770:vstfs:///Classification/Node/21ceb780-fe18-446e-8f93-61a859040596",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 49,
+            "effectiveAllow": 49
+          }
+        },
+        "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500": {
+          "descriptor": "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500",
+          "allow": 3,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 19
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        }
+      },
+      "includeExtendedInfo": true
+    },
+    {
+      "inheritPermissions": true,
+      "token": "vstfs:///Classification/Node/21516d2e-88a7-4ed5-87d5-f32f70056770:vstfs:///Classification/Node/7a6f345c-ed28-4b7b-98e4-0ada0aca8c4f",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 49,
+            "effectiveAllow": 49
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-402946945-2323703360-2373493696-720895659": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-402946945-2323703360-2373493696-720895659",
+          "allow": 38,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 55
+          }
+        }
+      },
+      "includeExtendedInfo": true
+    },
+    {
+      "inheritPermissions": true,
+      "token": "vstfs:///Classification/Node/21516d2e-88a7-4ed5-87d5-f32f70056770:vstfs:///Classification/Node/7a6f345c-ed28-4b7b-98e4-0ada0aca8c4f:vstfs:///Classification/Node/c4a8eac9-a343-4330-9a5b-7757865bd3b9",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 49,
+            "effectiveAllow": 49
+          }
+        },
+        "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500": {
+          "descriptor": "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500",
+          "allow": 3,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 55
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-402946945-2323703360-2373493696-720895659": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-402946945-2323703360-2373493696-720895659",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 38,
+            "effectiveAllow": 55
+          }
+        }
+      },
+      "includeExtendedInfo": true
+    },
+    {
+      "inheritPermissions": true,
+      "token": "vstfs:///Classification/Node/21516d2e-88a7-4ed5-87d5-f32f70056770:vstfs:///Classification/Node/7d84862e-80f3-4c92-b24d-9b43d300e852",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 49,
+            "effectiveAllow": 49
+          }
+        },
+        "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500": {
+          "descriptor": "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500",
+          "allow": 3,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 19
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        }
+      },
+      "includeExtendedInfo": true
+    },
+    {
+      "inheritPermissions": true,
+      "token": "vstfs:///Classification/Node/21516d2e-88a7-4ed5-87d5-f32f70056770:vstfs:///Classification/Node/869de6b5-48b8-4790-9cd5-c4d72f677f12",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 49,
+            "effectiveAllow": 49
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-4286216493-2189963592-2147641686-2526368387": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-4286216493-2189963592-2147641686-2526368387",
+          "allow": 38,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 55
+          }
+        }
+      },
+      "includeExtendedInfo": true
+    },
+    {
+      "inheritPermissions": true,
+      "token": "vstfs:///Classification/Node/21516d2e-88a7-4ed5-87d5-f32f70056770:vstfs:///Classification/Node/869de6b5-48b8-4790-9cd5-c4d72f677f12:vstfs:///Classification/Node/604627ea-d4cf-44e6-85cd-4320568b9cce",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 49,
+            "effectiveAllow": 49
+          }
+        },
+        "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500": {
+          "descriptor": "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500",
+          "allow": 3,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 55
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-4286216493-2189963592-2147641686-2526368387": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-4286216493-2189963592-2147641686-2526368387",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 38,
+            "effectiveAllow": 55
+          }
+        }
+      },
+      "includeExtendedInfo": true
+    },
+    {
+      "inheritPermissions": true,
+      "token": "vstfs:///Classification/Node/21516d2e-88a7-4ed5-87d5-f32f70056770:vstfs:///Classification/Node/a4d7c31f-fa21-411e-ae22-8c322f16f6cb",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 49,
+            "effectiveAllow": 49
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2355317626-3810951756-2715996275-3065151125": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2355317626-3810951756-2715996275-3065151125",
+          "allow": 38,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 55
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        }
+      },
+      "includeExtendedInfo": true
+    },
+    {
+      "inheritPermissions": true,
+      "token": "vstfs:///Classification/Node/21516d2e-88a7-4ed5-87d5-f32f70056770:vstfs:///Classification/Node/a4d7c31f-fa21-411e-ae22-8c322f16f6cb:vstfs:///Classification/Node/58fd07e5-a098-4bd1-8e12-a54a66b7af5f",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 49,
+            "effectiveAllow": 49
+          }
+        },
+        "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500": {
+          "descriptor": "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500",
+          "allow": 3,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 55
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2355317626-3810951756-2715996275-3065151125": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2355317626-3810951756-2715996275-3065151125",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 38,
+            "effectiveAllow": 55
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        }
+      },
+      "includeExtendedInfo": true
+    },
+    {
+      "inheritPermissions": true,
+      "token": "vstfs:///Classification/Node/21516d2e-88a7-4ed5-87d5-f32f70056770:vstfs:///Classification/Node/a4d7c31f-fa21-411e-ae22-8c322f16f6cb:vstfs:///Classification/Node/af64c82a-0cd3-466c-98e0-cf595112d2f7",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:160425a1-48f3-423f-9c86-997a8860b023",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 49,
+            "effectiveAllow": 49
+          }
+        },
+        "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500": {
+          "descriptor": "System.Security.Principal.WindowsIdentity;S-1-5-21-1631865137-610322218-255969127-500",
+          "allow": 3,
+          "deny": 0,
+          "extendedInfo": {
+            "effectiveAllow": 55
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-4-1",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-1169391908-1250481994-2828584224-1647881798",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2355317626-3810951756-2715996275-3065151125": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2355317626-3810951756-2715996275-3065151125",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 38,
+            "effectiveAllow": 55
+          }
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-371856088-2596073806-2230235853-3989923422-1-2678407350-4200409418-2921200727-2682119081",
+          "allow": 0,
+          "deny": 0,
+          "extendedInfo": {
+            "inheritedAllow": 17,
+            "effectiveAllow": 17
+          }
+        }
+      },
+      "includeExtendedInfo": true
+    }
+  ]
+}

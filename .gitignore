@@ -1,0 +1,7 @@
+src/coverage.xml
+obj/
+dist/
+scratch/
+test-results.xml
+tests/integration/secrets.ps1
+tests/mock

@@ -1,0 +1,24 @@
+{
+  "count": 2,
+  "value": [
+    {
+      "id": "160425a1-48f3-423f-9c86-997a8860b023",
+      "name": "Scratch",
+      "url": "https://azdo1.experiment.net/DefaultCollection/_apis/projects/160425a1-48f3-423f-9c86-997a8860b023",
+      "state": "wellFormed",
+      "revision": 17,
+      "visibility": "private",
+      "lastUpdateTime": "2021-08-18T23:20:17.547Z"
+    },
+    {
+      "id": "81c7dde9-241d-4579-86e1-ab22926602a4",
+      "name": "Entrepreneur",
+      "description": "Stuff I hope will result in profit",
+      "url": "https://azdo1.experiment.net/DefaultCollection/_apis/projects/81c7dde9-241d-4579-86e1-ab22926602a4",
+      "state": "wellFormed",
+      "revision": 8,
+      "visibility": "private",
+      "lastUpdateTime": "2021-07-01T15:18:22.127Z"
+    }
+  ]
+}

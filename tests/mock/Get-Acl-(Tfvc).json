@@ -1,0 +1,162 @@
+{
+  "count": 7,
+  "value": [
+    {
+      "inheritPermissions": false,
+      "token": "$",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-0-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-0-1",
+          "allow": 15871,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-0-2": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-0-2",
+          "allow": 15871,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-1-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-1-1",
+          "allow": 14367,
+          "deny": 0
+        }
+      }
+    },
+    {
+      "inheritPermissions": true,
+      "token": "$/Agile Git",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:50356636-498f-44bd-ad46-3bba28b90548": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:50356636-498f-44bd-ad46-3bba28b90548",
+          "allow": 14367,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-2611619990-2115024708-2481424936-3314176938-0-0-0-0-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-2611619990-2115024708-2481424936-3314176938-0-0-0-0-1",
+          "allow": 15871,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-2611619990-2115024708-2481424936-3314176938-0-0-0-1-2": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-2611619990-2115024708-2481424936-3314176938-0-0-0-1-2",
+          "allow": 4127,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-2611619990-2115024708-2481424936-3314176938-1-2086103233-1889380929-2394498879-1111398504": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-2611619990-2115024708-2481424936-3314176938-1-2086103233-1889380929-2394498879-1111398504",
+          "allow": 4127,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-2611619990-2115024708-2481424936-3314176938-1-3298263705-3043286082-2460110153-1466133322": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-2611619990-2115024708-2481424936-3314176938-1-3298263705-3043286082-2460110153-1466133322",
+          "allow": 1,
+          "deny": 0
+        }
+      }
+    },
+    {
+      "inheritPermissions": true,
+      "token": "$/An Empty Project",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:6aec50ad-1ad1-462b-be2d-62a324ab7f5b": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:6aec50ad-1ad1-462b-be2d-62a324ab7f5b",
+          "allow": 14367,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1416471502-3870815816-2814238203-828564050-0-0-0-0-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1416471502-3870815816-2814238203-828564050-0-0-0-0-1",
+          "allow": 15871,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1416471502-3870815816-2814238203-828564050-0-0-0-1-2": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1416471502-3870815816-2814238203-828564050-0-0-0-1-2",
+          "allow": 4127,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1416471502-3870815816-2814238203-828564050-1-2643896865-3106049097-2226933982-1244205889": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1416471502-3870815816-2814238203-828564050-1-2643896865-3106049097-2226933982-1244205889",
+          "allow": 1,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1416471502-3870815816-2814238203-828564050-1-3624386546-1294192970-2177964839-2577626378": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1416471502-3870815816-2814238203-828564050-1-3624386546-1294192970-2177964839-2577626378",
+          "allow": 4127,
+          "deny": 0
+        }
+      }
+    },
+    {
+      "inheritPermissions": true,
+      "token": "$/Basic Tfvc",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:b8f8c12b-0d67-4f13-8d7b-27085b788141": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:b8f8c12b-0d67-4f13-8d7b-27085b788141",
+          "allow": 14367,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-4244718784-3057833032-2341908254-2469626889-0-0-0-0-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-4244718784-3057833032-2341908254-2469626889-0-0-0-0-1",
+          "allow": 15871,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-4244718784-3057833032-2341908254-2469626889-0-0-0-1-2": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-4244718784-3057833032-2341908254-2469626889-0-0-0-1-2",
+          "allow": 4127,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-4244718784-3057833032-2341908254-2469626889-1-1333742325-1081676109-2592479538-1969397028": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-4244718784-3057833032-2341908254-2469626889-1-1333742325-1081676109-2592479538-1969397028",
+          "allow": 4127,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-4244718784-3057833032-2341908254-2469626889-1-2038111388-2591049293-2739122824-4007078087": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-4244718784-3057833032-2341908254-2469626889-1-2038111388-2591049293-2739122824-4007078087",
+          "allow": 1,
+          "deny": 0
+        }
+      }
+    },
+    {
+      "inheritPermissions": true,
+      "token": "$/Basic Tfvc/Additional",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-0-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-0-1",
+          "allow": 8192,
+          "deny": 0
+        }
+      }
+    },
+    {
+      "inheritPermissions": false,
+      "token": "$/Basic Tfvc/Hidden",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:b8f8c12b-0d67-4f13-8d7b-27085b788141": {
+          "descriptor": "Microsoft.TeamFoundation.ServiceIdentity;05731b17-681d-4db6-b746-828698883133:Build:b8f8c12b-0d67-4f13-8d7b-27085b788141",
+          "allow": 14367,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-0-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-0-1",
+          "allow": 15871,
+          "deny": 0
+        },
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-4244718784-3057833032-2341908254-2469626889-0-0-0-0-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-4244718784-3057833032-2341908254-2469626889-0-0-0-0-1",
+          "allow": 15871,
+          "deny": 0
+        }
+      }
+    },
+    {
+      "inheritPermissions": true,
+      "token": "$/Basic Tfvc/Locked",
+      "acesDictionary": {
+        "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-0-1": {
+          "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-0-1",
+          "allow": 0,
+          "deny": 8192
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "count": 1,
+  "value": [
+    {
+      "id": "1f48a3fa-8a74-4337-a03d-1496313be8d3",
+      "descriptor": "Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1046322189-4134872899-2246549245-437147920-0-0-0-0-1",
+      "subjectDescriptor": "vssgp.Uy0xLTktMTU1MTM3NDI0NS0xMDQ2MzIyMTg5LTQxMzQ4NzI4OTktMjI0NjU0OTI0NS00MzcxNDc5MjAtMC0wLTAtMC0x",
+      "providerDisplayName": "[DefaultCollection]\\Project Collection Administrators",
+      "isActive": true,
+      "isContainer": true,
+      "members": [],
+      "memberOf": [],
+      "memberIds": [],
+      "masterId": "ffffffff-ffff-ffff-ffff-ffffffffffff",
+      "properties": {
+        "SchemaClassName": {
+          "$type": "System.String",
+          "$value": "Group"
+        },
+        "Description": {
+          "$type": "System.String",
+          "$value": "Members of this application group can perform all privileged operations on the Team Project Collection."
+        },
+        "Domain": {
+          "$type": "System.String",
+          "$value": "vstfs:///Framework/IdentityDomain/0d9c5d3e-75f6-4327-85e7-9efd1a0e5910"
+        },
+        "Account": {
+          "$type": "System.String",
+          "$value": "Project Collection Administrators"
+        },
+        "SecurityGroup": {
+          "$type": "System.String",
+          "$value": "SecurityGroup"
+        },
+        "SpecialType": {
+          "$type": "System.String",
+          "$value": "AdministrativeApplicationGroup"
+        },
+        "ScopeId": {
+          "$type": "System.Guid",
+          "$value": "0d9c5d3e-75f6-4327-85e7-9efd1a0e5910"
+        },
+        "ScopeType": {
+          "$type": "System.String",
+          "$value": "ServiceHost"
+        },
+        "LocalScopeId": {
+          "$type": "System.Guid",
+          "$value": "0d9c5d3e-75f6-4327-85e7-9efd1a0e5910"
+        },
+        "SecuringHostId": {
+          "$type": "System.Guid",
+          "$value": "0d9c5d3e-75f6-4327-85e7-9efd1a0e5910"
+        },
+        "ScopeName": {
+          "$type": "System.String",
+          "$value": "DefaultCollection"
+        },
+        "GlobalScope": {
+          "$type": "System.String",
+          "$value": "GlobalScope"
+        },
+        "VirtualPlugin": {
+          "$type": "System.String",
+          "$value": ""
+        }
+      },
+      "resourceVersion": 2,
+      "metaTypeId": 255
+    }
+  ]
+}
