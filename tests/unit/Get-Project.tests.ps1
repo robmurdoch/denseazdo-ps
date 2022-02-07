@@ -99,17 +99,6 @@ Describe "PublicFunctions" {
             $mockResponse | Should -BeLike $expectedUri
         }
 
-        # Broke with pagedresponse because getPagedResponse hides some methods
-        # It 'When Id not present, multiple Projects returned ' {
-           
-        #     $projects = Get-Content "$PSScriptRoot/../../tests/mock/projects.json"  | ConvertFrom-Json
-        #     Mock Invoke-RestMethod { return $projects.value }
-
-        #     $response = Get-Project -OrgConnection $org
-
-        #     $response.count | Should -Be 2
-        # }
-
         It 'When Id present, single Project returned' {
            
             $project = Get-Content "$PSScriptRoot/../../tests/mock/project.json"  | ConvertFrom-Json
