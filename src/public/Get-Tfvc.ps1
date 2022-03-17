@@ -5,31 +5,31 @@ function Get-Tfvc {
     .DESCRIPTION
         Providing various parameters allows one to retrieve specific changesets, recurse, oneLevel, previous changeset, and scoped paths
     .EXAMPLE
-        Get-Tfvc -OrgConnection $orgConnection -Project $project 
+        Get-Tfvc -OrgConnection $OrgConnection -Project $project 
 
         Gets the project's root files/folders and direct descendents
     .EXAMPLE
-        Get-Tfvc -OrgConnection $orgConnection -Project $project -RecursionLevel 'oneLevel'
+        Get-Tfvc -OrgConnection $OrgConnection -Project $project -RecursionLevel 'oneLevel'
 
         Gets the project's root files/folders and direct descendents
     .EXAMPLE
-        Get-Tfvc -OrgConnection $orgConnection -Project $project -ScopePath '$/Scratch/Hidden'
+        Get-Tfvc -OrgConnection $OrgConnection -Project $project -ScopePath '$/Scratch/Hidden'
 
         Gets the Hidden files/folders and direct descendents
     .EXAMPLE
-        Get-Tfvc -OrgConnection $orgConnection -Project $project -Version 2
+        Get-Tfvc -OrgConnection $OrgConnection -Project $project -Version 2
 
         Gets the files/folders that existed as of changeset 2
     .EXAMPLE
-        Get-Tfvc -OrgConnection $orgConnection -Project $project -ScopePath '$/Scratch/Hidden/some.js' -Version 10 -VersionOption previous -VersionType 'changeset'
+        Get-Tfvc -OrgConnection $OrgConnection -Project $project -ScopePath '$/Scratch/Hidden/some.js' -Version 10 -VersionOption previous -VersionType 'changeset'
 
         Gets the some.js file prior to changeset 10
     .EXAMPLE
-        Get-Tfvc -OrgConnection $orgConnection -Project $project -ScopePath '$/Scratch/Hidden' -Version 9 -VersionType 'changeset'
+        Get-Tfvc -OrgConnection $OrgConnection -Project $project -ScopePath '$/Scratch/Hidden' -Version 9 -VersionType 'changeset'
 
         Gets the Hidden folder's files as of changeset 9
     .EXAMPLE
-        # Get-Tfvc -OrgConnection $orgConnection -Project $project -IncludeSecurity |
+        # Get-Tfvc -OrgConnection $OrgConnection -Project $project -IncludeSecurity |
         # Select-Object 'path','isFolder', 'identity','inheritPermissions','Administer labels','Check in','Check in other users'' changes','Label','Lock','Manage branch','Manage permissions','Merge','Pend a change in a server workspace','Read','Revise other users'' changes','Undo other users'' changes','Unlock other users'' changes' |
         # Export-Csv "$Env:USERPROFILE\Downloads\Tfvc.csv"
 
@@ -44,24 +44,14 @@ function Get-Tfvc {
     #>
     [CmdletBinding(DefaultParameterSetName = 'Latest')]
     param (
-        [Parameter(ParameterSetName = 'Latest', 
-            Mandatory = $true, 
+        [Parameter(Mandatory = $true, 
             HelpMessage = 'Reference to Connection object obtained from Connect-AzureDevOps')]
-        [Parameter(ParameterSetName = 'Version')]
-        [Parameter(ParameterSetName = 'Security')]
         [Alias("O", "Org")]
         [System.Object]$OrgConnection,
 
-        [Parameter(ParameterSetName = 'Latest', 
-            Mandatory = $true, 
+        [Parameter(Mandatory = $true, 
             ValueFromPipeline = $true, 
             HelpMessage = 'Reference to an object obtained by Get-Project')]
-        [Parameter(ParameterSetName = 'Version', 
-            Mandatory = $true, 
-            ValueFromPipeline = $true)]
-        [Parameter(ParameterSetName = 'Security', 
-            Mandatory = $true, 
-            ValueFromPipeline = $true)]
         [Alias("P", "Proj")]
         [System.Object]$Project,
         
@@ -72,7 +62,8 @@ function Get-Tfvc {
 
         [Parameter(ParameterSetName = 'Latest', 
             HelpMessage = 'Version control recursion type; none, full (all descendents),oneLevel, oneLevelPlusNestedEmptyFolders(See AzDo Docs)')]
-        [ValidateSet('full', 'none', 'oneLevel', 'oneLevelPlusNestedEmptyFolders')]
+        [ValidateSet('Full', 'None', 'OneLevel', 'OneLevelPlusNestedEmptyFolders')]
+        [Parameter(ParameterSetName = 'Security')]
         [String]$RecursionLevel,
 
         [Parameter(ParameterSetName = 'Latest', 
@@ -111,6 +102,7 @@ function Get-Tfvc {
             $query += "scopePath=$ScopePath"
         }
         if ($RecursionLevel) {
+            # TODO: Corerse to InitialCaps (full doesn't work, Full is required (2018 at least) and ValidateSet does not ensure case)
             $query += "recursionLevel=$RecursionLevel"
         }
         if ($IncludeLinks) {
@@ -128,8 +120,8 @@ function Get-Tfvc {
 
         if ($PSCmdlet.ParameterSetName -eq 'Security' -and $IncludeSecurity) {
     
-            $securityNamespace = Get-SecurityNamespace -OrgConnection $OrgConnection | 
-            Where-Object { $PSItem.name -eq 'VersionControlItems' }
+            $securityNamespace = Get-SecurityNamespace -OrgConnection $OrgConnection -NamespaceId 'a39371cf-0841-4c16-bbd3-276e341bc052' #| 
+            # Where-Object { $PSItem.name -eq 'VersionControlItems' }
             $rootSecurityToken = "$/$($project.name)"
 
             $acls = Get-Acl -OrgConnection $OrgConnection `

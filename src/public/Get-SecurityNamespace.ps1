@@ -20,17 +20,27 @@ function Get-SecurityNamespace {
         [Parameter(Mandatory = $true,
             ValueFromPipeline = $true,
             HelpMessage = 'Reference to Connection object returned from call to Connect-AzureDevOps')]
-            [Alias("O","Org")]
-            [System.Object]$OrgConnection
+        [Alias("O", "Org")]
+        [System.Object]$OrgConnection,
+
+        [Parameter(
+            HelpMessage = 'ID (guid) of the namespace to retrieve ')]
+        [String]$NamespaceId
+            
     )
     process {
 
-        $path = '_apis/securitynamespaces'
+        if ($NamespaceId){
+            $path = "_apis/securitynamespaces/$NamespaceId"
+        }
+        else{
+            $path = '_apis/securitynamespaces'
+        }
 
         $uri = getApiUri -OrgConnection $OrgConnection -Path $path
 
         Write-Output (getApiResponse -OrgConnection $OrgConnection `
-            -Uri $uri -CacheResults `
-            -CacheName $MyInvocation.MyCommand.Name).value
+                -Uri $uri -CacheResults `
+                -CacheName $MyInvocation.MyCommand.Name).value
     }
 }

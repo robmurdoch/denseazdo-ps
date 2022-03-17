@@ -7,16 +7,16 @@ function Connect-AzureDevOps {
 
         This cmdlet returns an AzDoConnection object that can be used in subsequent methods. 
     .EXAMPLE
-        Connect-AzureDevOps -Uri 'https://myorganization/DefaultCollection' -PersonalAccessToken mypersonalaccesstoken
+        Connect-AzureDevOps -OrgUri 'https://myorganization/DefaultCollection' -PersonalAccessToken mypersonalaccesstoken
         
         Connects with a personal access token (PAT).
     .EXAMPLE
         $creds = Get-Credential
-        Connect-AzureDevOps -Uri 'https://somedomain/somecollection -Credentials $creds
+        Connect-AzureDevOps -OrgUri 'https://somedomain/somecollection -Credentials $creds
         
         Connects with basic authentication using the provided credentials. 
     .EXAMPLE
-        Connect-AzureDevOps -Uri $uri
+        Connect-AzureDevOps -OrgUri $uri
 
         Connects with integrated windows authentication.
     .INPUTS
@@ -70,18 +70,21 @@ function Connect-AzureDevOps {
             $org.ApiVersion = $version
             try {
                 $uri = getApiUri -OrgConnection $org `
-                    -Path '_apis/projects' -Query '$top=1'
+                    -Path '_apis/projects'
                 $null = getApiResponse -OrgConnection $org `
                     -Uri $uri -CacheName $MyInvocation.MyCommand.Name
                 return $org
                 break
             }
-            catch {           
-                if (($PSItem.ErrorDetails | ConvertFrom-Json).message -like '*out of range for this server*'){
+            catch {
+                if ($PSItem.ErrorDetails -like '*Page not found*'){
+                    Write-Warning "$Version not supported, minimal support exists for TFS 2018"
+                }
+                elseif (($PSItem.ErrorDetails | ConvertFrom-Json).message -like '*out of range for this server*'){
                     Write-Warning "$version not supported, trying downlevel version"
                 }
                 else{
-                    throw
+                    # throw
                 }
             }
         }
