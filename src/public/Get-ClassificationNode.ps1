@@ -98,14 +98,14 @@ function Get-ClassificationNode {
             if ($StructureGroup -eq 'areas') {
                 $rootNode = Get-RootClassificationNode -OrgConnection $OrgConnection `
                     -Project $Project -StructureType 'Area'
-                $securityNamespace = Get-SecurityNamespace -OrgConnection $OrgConnection -NamespaceId '83e28ad4-2d72-4ceb-97b0-c7726d5502c3' #| 
-                # Where-Object { $PSItem.name -eq 'CSS' }
+                $securityNamespace = Get-SecurityNamespace -OrgConnection $OrgConnection `
+                    -NamespaceId '83e28ad4-2d72-4ceb-97b0-c7726d5502c3'    
             }
             else {
                 $rootNode = Get-RootClassificationNode -OrgConnection $OrgConnection `
                     -Project $Project -StructureType 'Iteration'
-                $securityNamespace = Get-SecurityNamespace -OrgConnection $OrgConnection | 
-                Where-Object { $PSItem.name -eq 'Iteration' }
+                $securityNamespace = Get-SecurityNamespace -OrgConnection $OrgConnection `
+                    -NamespaceId 'bf7bfa03-b2b7-47db-8113-fa2e002cc5b1'
             }
             
             $rootSecurityToken = "vstfs:///Classification/Node/$($rootNode.identifier)"

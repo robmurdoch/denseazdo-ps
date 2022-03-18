@@ -95,16 +95,20 @@ function Get-Tfvc {
     )
     process {
 
+        Write-Verbose $PSCmdlet.ParameterSetName 
         $path = "$($Project.id)/_apis/tfvc/items"
 
         $query = @()
-        if ($ScopePath.Length -gt 0) {
-            $query += "scopePath=$ScopePath"
+
+        if (-not $ScopePath){
+            $ScopePath = "$/$($Project.name)"
         }
-        if ($RecursionLevel) {
-            # TODO: Corerse to InitialCaps (full doesn't work, Full is required (2018 at least) and ValidateSet does not ensure case)
-            $query += "recursionLevel=$RecursionLevel"
+        $query += "scopePath=$ScopePath"
+        if (-not $RecursionLevel){
+            $RecursionLevel = 'None'
         }
+        $query += "recursionLevel=$RecursionLevel"
+
         if ($IncludeLinks) {
             $query += 'includeLinks=true'
         }
@@ -119,9 +123,10 @@ function Get-Tfvc {
         }
 
         if ($PSCmdlet.ParameterSetName -eq 'Security' -and $IncludeSecurity) {
+
+            $securityNamespace = Get-SecurityNamespace -OrgConnection $OrgConnection `
+                -NamespaceId 'a39371cf-0841-4c16-bbd3-276e341bc052'
     
-            $securityNamespace = Get-SecurityNamespace -OrgConnection $OrgConnection -NamespaceId 'a39371cf-0841-4c16-bbd3-276e341bc052' #| 
-            # Where-Object { $PSItem.name -eq 'VersionControlItems' }
             $rootSecurityToken = "$/$($project.name)"
 
             $acls = Get-Acl -OrgConnection $OrgConnection `
@@ -129,24 +134,16 @@ function Get-Tfvc {
                 -SecurityToken $rootSecurityToken `
                 -Recurse -IncludeExtendedInfo -CacheResults
     
-            $uri = getApiUri -OrgConnection $OrgConnection `
-                -Path $path -Query $query
-            $tfvcNodes = getApiResponse -OrgConnection $OrgConnection `
-                -Uri $uri -CacheResults `
-                -CacheName $MyInvocation.MyCommand.Name
+            $slashCount = ($ScopePath.ToCharArray() | Where-Object { $_ -eq '/' } | Measure-Object).Count
 
-            foreach ($node in $tfvcNodes.value) {
-            
-                $token = "$($node.path)"
-                $acl = $acls | Where-Object { $PSItem.token -eq $token }
-    
-                if ($null -ne $acl) {
-                    $aces = Get-Ace -OrgConnection $OrgConnection `
-                        -SecurityNamespace $SecurityNamespace `
-                        -Acl $acl
-                    appendToAces -ObjectToAppend $node -Aces $aces
-                }
-            }
+            recurseTfvcNode -OrgConnection $OrgConnection `
+                -Project $Project `
+                -ScopePath $ScopePath `
+                -RecursionLevel $RecursionLevel `
+                -Level $slashCount `
+                -Acls $acls `
+                -SecurityNamespace $securityNamespace `
+                -includeSecurity
         } 
         else {
             $uri = getApiUri -OrgConnection $OrgConnection -Path $path -Query $query

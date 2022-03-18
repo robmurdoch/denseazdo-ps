@@ -84,7 +84,7 @@ function Connect-AzureDevOps {
                     Write-Warning "$version not supported, trying downlevel version"
                 }
                 else{
-                    # throw
+                    throw
                 }
             }
         }
