@@ -244,17 +244,18 @@ function Get-BuildDefinition {
 
         if ($PSCmdlet.ParameterSetName -eq 'IdFilter' -or $PSCmdlet.ParameterSetName -eq 'RepositoryFilter' -or $PSCmdlet.ParameterSetName -eq 'GenericFilter' -or $PSCmdlet.ParameterSetName -eq 'Revisions') {
             
-            if ($IncludeSecurity) {    
-                $securityNamespace = Get-SecurityNamespace -OrgConnection $OrgConnection | 
-                Where-Object { $PSItem.name -eq 'Build' }
+            if ($IncludeSecurity) {
 
-                $builds = getPagedApiResponse -OrgConnection $OrgConnection `
+                $securityNamespace = Get-SecurityNamespace -OrgConnection $OrgConnection `
+                    -NamespaceId '33344d9c-fc72-4d6f-aba5-fa317101a7e9'
+
+                $buildDefinitionss = getPagedApiResponse -OrgConnection $OrgConnection `
                     -Path $path -Query $query -CacheResults `
                     -CacheName $MyInvocation.MyCommand.Name
                 
-                foreach ($build in $builds.value) {
+                foreach ($buildDefinitions in $buildDefinitionss.value) {
 
-                    $token = "$($Project.Id)/$($build.id)"
+                    $token = "$($Project.Id)/$($buildDefinitions.id)"
                     $acls = Get-Acl -OrgConnection $OrgConnection `
                         -SecurityNamespace $securityNamespace `
                         -SecurityToken $token `
@@ -265,7 +266,7 @@ function Get-BuildDefinition {
                         $aces = Get-Ace -OrgConnection $OrgConnection `
                             -SecurityNamespace $SecurityNamespace `
                             -Acl $acl
-                        appendToAces -ObjectToAppend $build -Aces $aces
+                        appendToAces -ObjectToAppend $buildDefinitions -Aces $aces
                     }
                 }
             } 

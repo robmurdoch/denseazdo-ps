@@ -206,17 +206,18 @@ function Get-ReleaseDefinition {
 
         if ($PSCmdlet.ParameterSetName -eq 'IdFilter' -or $PSCmdlet.ParameterSetName -eq 'ArtifactFilter' -or $PSCmdlet.ParameterSetName -eq 'GenericFilter') {
             
-            if ($IncludeSecurity) {    
-                $securityNamespace = Get-SecurityNamespace -OrgConnection $OrgConnection | 
-                Where-Object { $PSItem.name -eq 'Build' }
+            if ($IncludeSecurity) {
+                
+                $securityNamespace = Get-SecurityNamespace -OrgConnection $OrgConnection `
+                -NamespaceId 'c788c23e-1b46-4162-8f5e-d7585343b5de'
 
-                $builds = getPagedApiResponse -OrgConnection $OrgConnection `
+                $releaseDefinitions = getPagedApiResponse -OrgConnection $OrgConnection `
                     -Path $path -Query $query -CacheResults `
                     -CacheName $MyInvocation.MyCommand.Name
                 
-                foreach ($build in $builds.value) {
+                foreach ($releaseDefinition in $releaseDefinitions.value) {
 
-                    $token = "$($Project.Id)/$($build.id)"
+                    $token = "$($Project.Id)/$($releaseDefinition.id)"
                     $acls = Get-Acl -OrgConnection $OrgConnection `
                         -SecurityNamespace $securityNamespace `
                         -SecurityToken $token `
@@ -227,7 +228,7 @@ function Get-ReleaseDefinition {
                         $aces = Get-Ace -OrgConnection $OrgConnection `
                             -SecurityNamespace $SecurityNamespace `
                             -Acl $acl
-                        appendToAces -ObjectToAppend $build -Aces $aces
+                        appendToAces -ObjectToAppend $releaseDefinition -Aces $aces
                     }
                 }
             } 
