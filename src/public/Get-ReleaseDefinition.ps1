@@ -173,17 +173,17 @@ function Get-ReleaseDefinition {
             if ($PSBoundParameters.ContainsKey('Name') -and $Name.Length -gt 0) {
                 $query += "searchText=$Name"
             }
-            if ($ExactMatch){
+            if ($ExactMatch) {
                 $query += "isExactNameMatch=true"
             }
-            if ($MatchFolder){
+            if ($MatchFolder) {
                 $query += "searchTextContainsFolderName=true"
             } 
             if ($PSBoundParameters.ContainsKey('TagFilter')) {
                 $tagList = $TagFilter -join ','
                 $query += "tagFilter=$tagList"
             }
-            if ($Deleted){
+            if ($Deleted) {
                 $query += 'isDeleted=true'
             }
             if ($PSBoundParameters.ContainsKey('Folder') -and $Folder.Length -gt 0) {
@@ -209,7 +209,7 @@ function Get-ReleaseDefinition {
             if ($IncludeSecurity) {
                 
                 $securityNamespace = Get-SecurityNamespace -OrgConnection $OrgConnection `
-                -NamespaceId 'c788c23e-1b46-4162-8f5e-d7585343b5de'
+                    -NamespaceId 'c788c23e-1b46-4162-8f5e-d7585343b5de'
 
                 $releaseDefinitions = getPagedApiResponse -OrgConnection $OrgConnection `
                     -Path $path -Query $query -CacheResults `

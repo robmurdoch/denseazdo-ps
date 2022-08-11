@@ -24,9 +24,8 @@ function Get-SecurityNamespace {
         [System.Object]$OrgConnection,
 
         [Parameter(
-            HelpMessage = 'ID (guid) of the namespace to retrieve ')]
+            HelpMessage = 'ID (guid) of the namespace to retrieve. Required if api-version is less than 5.0 ')]
         [String]$NamespaceId
-            
     )
     process {
 
@@ -34,7 +33,12 @@ function Get-SecurityNamespace {
             $path = "_apis/securitynamespaces/$NamespaceId"
         }
         else{
-            $path = '_apis/securitynamespaces'
+            if ($OrgConnection.getApiVersionNumber() -lt [double]5.0){
+                Write-Error "Must provide a NamespaceId if api-version is less than 5.0"
+            }
+            else{
+                $path = '_apis/securitynamespaces'
+            }
         }
 
         $uri = getApiUri -OrgConnection $OrgConnection -Path $path

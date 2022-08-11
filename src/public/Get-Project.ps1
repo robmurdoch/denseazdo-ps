@@ -3,32 +3,43 @@ function Get-Project {
     .SYNOPSIS
         Provides access to the Core -> Projects -> List and Get REST APIs 
     .DESCRIPTION
-        Gets a list of projects or a single project.
+        Returns a list of projects or a single project.
         By default the List REST API returns only 100 projects. For organizations (collections) with more than 100 projects, Get-Project will retrieve all projects 100 at a time.
     .EXAMPLE
-        Get-Project -OrgConnection $org
+        $orgUri = 'https://myserver.mydomain.com/myorg'
+        $token = '[actual personal access token]'
+        Connect-AzureDevOps -OrgUri $orgUri -PersonalAccessToken $token -Verbose |
+            Get-Project -OrgConnection $org
 
         Get all projects in an organization (collection).
     .EXAMPLE
-        $AzDoPageSizePreference = 2
+        $orgUri = 'https://myserver.mydomain.com/myorg'
+        $token = '[actual personal access token]'
+        $org = Connect-AzureDevOps -OrgUri $orgUri -PersonalAccessToken $token
+
+        $global:AzDoPageSizePreference = 2
         Get-Project -OrgConnection $org
 
         Get all projects in an organization (collection) 2 at a time.
     .EXAMPLE
-        Get-Project -OrgConnection $org | Get-Project -OrgConnection $org -CacheResults -IncludeCapabilities
+        Get-Project -OrgConnection $org | 
+            Get-Project -OrgConnection $org -CacheResults -IncludeCapabilities | 
+            Select-Object -Property "name" -ExpandProperty "Capabilities"
         
-        Gets all wellFormed (default) projects in the organization piping output to get each project's Capabilities caching the results. 
+        Gets all wellFormed (default) projects in an organization including their capabilities and caching the results, piping them each to output only the project name and Capabilities. 
     .EXAMPLE
         Get-Project -OrgConnection $org -stateFilter all
-        Gets all projects regardless of their state.  
+
+        Gets all projects regardless of their state (new, deleted, createPending, etc.).
     .EXAMPLE
         Get-Project -OrgConnection $org -stateFilter deleting
+
         Gets all projects that are currently being deleted. Useful to poll this api after deleting a project to determine when it completes.
     .INPUTS
         OrgConnection can be piped to this Cmdlet
         A Project's ID can be piped to this Cmdlet.
     .OUTPUTS
-        The results of Invoke-RestMethod for singletons .value for lists
+        The results of Invoke-RestMethod or Invoke-WebMethod. Returns Singletons or Lists with .count and .value) depending on API called.
     .NOTES
         Collection must have at least 1 project that the calling user has permission to read.
     #>

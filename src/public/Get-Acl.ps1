@@ -5,17 +5,15 @@ function Get-Acl {
     .DESCRIPTION
         Returns list of ACL objects for the security namespace and token 
     .EXAMPLE
-        Get-Acl -OrgConnection $org -SecurityNamespace $sn
-        Returns the Acl for the given SecurityToken in the given SecurityNamespace
+        Get-Acl -OrgConnection $org -SecurityNamespace (Get-SecurityNamespace -OrgConnection $org -NamespaceId 'a39371cf-0841-4c16-bbd3-276e341bc052' -Verbose)
+
+        Returns the Acl(s) in the given SecurityNamespace. Note this works only for namespaces at the Org level that don't require token, e.g. TFVC.
     .EXAMPLE
-        Get-Acl -OrgConnection $org -SecurityNamespace $sn $SecurityToken $t
-        Returns the Acl for the given SecurityToken in the given SecurityNamespace
-    .EXAMPLE
-        Get-Acl -OrgConnection $org -SecurityNamespace $sn $SecurityToken $t -Recurse
-        Returns all of the Acl for the given SecurityToken in the given SecurityNamespace recursively
-    .EXAMPLE
-        Get-Acl -OrgConnection $org -SecurityNamespace $sn $SecurityToken $t -IncludeExtendedInfo
-        Returns the Acl for the given SecurityToken in the given SecurityNamespace and includes the Effective permissions
+        $sn = Get-SecurityNamespace -OrgConnection $org -NamespaceId 'c788c23e-1b46-4162-8f5e-d7585343b5de' -Verbose
+        $project = Get-Project -OrgConnection $org -Verbose | Select-Object -First 1
+        Get-Acl -OrgConnection $org -SecurityNamespace $sn -SecurityToken $($project.id) -Verbose
+
+        Returns the Acl(s) for the root node of the ReleaseManagement security namespace in the first project in the collection.
     .INPUTS
         None. You cannot pipe objects to Get-Acl.
     .OUTPUTS

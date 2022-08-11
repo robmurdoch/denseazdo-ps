@@ -14,6 +14,7 @@ function getApiResponse {
         }
         else {
             Write-Verbose $Uri
+
             if ($OrgConnection.Headers.ContainsKey('Authentication')) {
                 $response = Invoke-RestMethod `
                     -Method Get `

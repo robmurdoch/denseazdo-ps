@@ -8,18 +8,34 @@ function Get-ClassificationNode {
         $org = Connect-AzureDevOps -OrgUri 'https://azdo1.experiment.net/defaultcollection'
         $project = Get-Project -OrgConnection $org | Where-Object { $PSItem.name -eq 'Scratch' }
         Get-ClassificationNode -OrgConnection $org -Project $project -StructureGroup 'iterations' -IncludeSecurity -Depth 10 | 
-            Select-Object "url","structureType","path","id","identifier","name","hasChildren","Identity","InheritPermissions","Create child nodes","Delete this node","Edit this node","Edit work items in this node","Manage test plans","Manage test suites","View permissions for this node","View work items in this node" |
-            Export-Csv "$Env:USERPROFILE\Downloads\$($project.name)-iterations.csv"
+            Select-Object "id","name","path","Identity","InheritPermissions","View permissions for this node","Edit this node","Delete this node","Create child nodes" |
+            Export-Csv "$Env:USERPROFILE\Downloads\iterations.csv" -NoTypeInformation
 
-        Esablish a connection to an Azure DevOps organization, get a Project, then export iterations with Security to a CSV file.
+        Esablish a connection to an Azure DevOps organization, get a Project, get the iteration nodes, select specific object properties for each node, then export iterations with Security to a CSV file without the first row of type information.
     .EXAMPLE
-        Get-ClassificationNode -OrgConnection $orgConnection -Project $project  -StructureGroup 'areas' -Node 'windows team' -Depth 10 
+        $org = Connect-AzureDevOps -OrgUri 'https://azdo1.experiment.net/defaultcollection'
+        $project = Get-Project -OrgConnection $org | Where-Object { $PSItem.name -eq 'Scratch' }
+        Get-ClassificationNode -OrgConnection $org -Project $project -StructureGroup 'areas' -IncludeSecurity -Depth 10 | 
+            Select-Object "id","path","name","Identity","InheritPermissions","Edit work items in this node","Manage test plans","View permissions for this node","Edit this node","Delete this node","View work items in this node","Manage test suites","Create child nodes" |
+            Export-Csv "$Env:USERPROFILE\Downloads\areas.csv"
 
-        Get the Windows Team Area and all of its children
+        Esablish a connection to an Azure DevOps organization, get a Project, send it down the pipe, get the area nodes, select specific object properties for each node, then export areas with Security to a CSV file.
     .EXAMPLE
-        Get-ClassificationNode -OrgConnection $orgConnection -Project $project  -StructureGroup 'iterations' -Ids 9
+        $project = Get-Project -OrgConnection $org -Verbose | Where-Object { $PSItem.name -eq 'Scratch' }
+        Get-ClassificationNode -OrgConnection $org -Project $project  -StructureGroup 'areas' -Node 'windows team' -Depth 10 |
+            Select-Object -ExpandProperty children
 
-        Get the Iteration with Id 9 and none of its children
+        Get the children of the Windows Team Area in the Scratch project.
+    .EXAMPLE
+        $project = Get-Project -OrgConnection $org -Verbose | Where-Object { $PSItem.name -eq 'Scratch' }
+        Get-ClassificationNode -OrgConnection $org -Project $project  -StructureGroup 'iterations' -Ids 9
+
+        Get the Iteration with Id 9 and none of its children.
+    .EXAMPLE
+        $project = Get-Project -OrgConnection $org -Verbose | Where-Object { $PSItem.name -eq 'Scratch' }
+        Get-ClassificationNode -OrgConnection $org -Project $project  -StructureGroup 'areas' -Node 'scratch team/demo app'
+
+        Get the area named 'demo app' that is a child of the top-level node named 'scrath team' and none of its children. Note, exclude project name and 'area', e.g. scratch/area.
     .INPUTS
         Project can be piped to this cmdlet
     .OUTPUTS
@@ -30,21 +46,19 @@ function Get-ClassificationNode {
     [CmdletBinding(DefaultParameterSetName = 'Node')]
     param (
         [Parameter(Mandatory = $true,
-            ValueFromPipeline = $true,
             HelpMessage = 'Reference to a Connection returned from call to Connect-AzureDevOps')]
         [Alias("O", "Org")]
         [System.Object]$OrgConnection,
 
         [Parameter(Mandatory = $true,
+            ValueFromPipeline = $true,
             HelpMessage = 'Reference to a Project returned from call to Get-Project Cmdlet')]
         [Alias("P", "Proj")]
         [System.Object]$Project,
 
-        [Parameter(ParameterSetName = 'Node', 
-            Mandatory = $true, 
-            HelpMessage = 'Reference to an object obtained by Get-Project')]
-        [Parameter(ParameterSetName = 'Security', 
-            Mandatory = $true)]
+        [Parameter(ParameterSetName = 'Node', Mandatory = $true)]
+        [Parameter(ParameterSetName = 'Security', Mandatory = $true)]
+        [Parameter(ParameterSetName = 'IDs', Mandatory = $true)]
         [ValidateSet("areas", "iterations")]
         [String]$StructureGroup,
 

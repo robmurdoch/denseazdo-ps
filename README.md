@@ -27,7 +27,7 @@ Download from PowerShell Gallery
 ## Development Environment
 
 1. Create .\tests\integration\secrets.ps1 with two variables: Url to your organization, personalaccesstoken to authenticate (GitIgnore prevents it from being checked in) 
-2. Run Unit Tests: e.g. Invoke-Pester .\tests\unit\Connect-AzureDevOps.tests.ps1
+2. Run Unit Tests: e.g. Invoke-Pester .\tests\unit\getOrgConnection.tests.ps1
 3. Run Integration tests: e.g. Invoke-Pester .\tests\integration\Core.tests.ps1 -Output Detailed
 4. Contribute
 

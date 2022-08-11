@@ -45,7 +45,8 @@ class OrgConnection {
         $this.AuthenticationMethod = 'DefaultCredential'
     }
 
-    [int]ApiVersionNumber() {
-        return ([int]$this.ApiVersion.Substring($this.ApiVersion.IndexOf('=') + 1))
+    [double] getApiVersionNumber() {
+        $versionPart = $this.ApiVersion.Substring($this.ApiVersion.IndexOf('=') + 1)
+        return [double]$versionPart
     }
 }

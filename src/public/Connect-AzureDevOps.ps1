@@ -73,17 +73,21 @@ function Connect-AzureDevOps {
                     -Path '_apis/projects'
                 $null = getApiResponse -OrgConnection $org `
                     -Uri $uri -CacheName $MyInvocation.MyCommand.Name
+                # Write-Verbose $org
                 return $org
                 break
             }
             catch {
-                if ($PSItem.ErrorDetails -like '*Page not found*'){
+                
+                # {"$id":"1","innerException":null,"message":"The requested REST API version of 7.0 is out of range for this server. The latest REST API version this server supports is 6.1.","typeName":"Microsoft.VisualStudio.Services.WebApi.VssVersionOutOfRangeException, Microsoft.VisualStudio.Services.WebApi","typeKey":"VssVersionOutOfRangeException","errorCode":0,"eventId":3000}
+                
+                if ($PSItem -and $PSItem.ErrorDetails -like '*Page not found*') {
                     Write-Warning "$Version not supported, minimal support exists for TFS 2018"
                 }
-                elseif (($PSItem.ErrorDetails | ConvertFrom-Json).message -like '*out of range for this server*'){
+                elseif ($PSItem -and $PSItem.ErrorDetails -and ($PSItem.ErrorDetails | ConvertFrom-Json).message -like '*out of range for this server*') {
                     Write-Warning "$version not supported, trying downlevel version"
                 }
-                else{
+                else {
                     throw
                 }
             }
