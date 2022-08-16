@@ -1,5 +1,6 @@
 function getApiUri {
     [CmdletBinding()]
+    [OutputType([System.String])]
     param (
         [System.Object]$OrgConnection,
         [String]$Path,

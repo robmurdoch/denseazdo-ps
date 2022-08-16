@@ -7,7 +7,7 @@ function getApiZipResponse {
     )
     process {
         if ($OrgConnection.Headers) {
-            $response = Invoke-RestMethod `
+            $null = Invoke-RestMethod `
                 -Method Get `
                 -Uri $Uri `
                 -ContentType 'application\zip' `
@@ -15,7 +15,7 @@ function getApiZipResponse {
                 -OutFile $Path
         }
         else {
-            $response = Invoke-RestMethod `
+            $null = Invoke-RestMethod `
                 -Method Get `
                 -Uri $Uri `
                 -ContentType 'application\zip' `

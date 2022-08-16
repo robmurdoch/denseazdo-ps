@@ -35,9 +35,6 @@ function Get-AzDoAcl {
         [Parameter(HelpMessage = 'Security Token appropriate for the Acl desired')]
         [String]$SecurityToken,
 
-        [Parameter(HelpMessage = 'Security descriptors to filter the results')]
-        [String]$Descriptors,
-
         [Switch]$Recurse,
         [Switch]$IncludeExtendedInfo,
         [Switch]$CacheResults
