@@ -12,7 +12,7 @@ Describe "Work Item features" {
         $org = Connect-AzureDevOps -OrgUri $orgUri -PersonalAccessToken $token
         $project = Get-Project -OrgConnection $org -CacheResults -Id 'Basic Tfvc'
     }
-    Context "Get-ClassificationNode, Get-RootClassificationNode, Get-Acl, Get-Ace, Get-Identity" {
+    Context "Get-ClassificationNode, Get-RootClassificationNode, Get-AzDoAcl, Get-Ace, Get-Identity" {
 
         It 'Queries Work Item Tracking Classification Nodes Get api for single Area by Node' {
            

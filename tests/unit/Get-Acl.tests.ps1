@@ -19,7 +19,7 @@ Describe "PublicFunctions" {
         $org.ApiVersion = $org.ApiVersions[0]
 }
  
-    Context "Get-Acl" {
+    Context "Get-AzDoAcl" {
 
         It 'When Recurse passed, calls Security ACLs api with recurse option' {           
            
@@ -28,7 +28,7 @@ Describe "PublicFunctions" {
             $token = '$/proj'
             $expectedPath = "$($OrgUri)/_apis/accesscontrollists/1234?token=$token&recurse=true*"
             
-            $mockResponse = Get-Acl -OrgConnection $org -SecurityNamespace $sn -SecurityToken $token -Recurse
+            $mockResponse = Get-AzDoAcl -OrgConnection $org -SecurityNamespace $sn -SecurityToken $token -Recurse
 
             $mockResponse | Should -BeLike $expectedPath
         }
@@ -40,7 +40,7 @@ Describe "PublicFunctions" {
             $token = '$/proj'
             $expectedPath = "$($OrgUri)/_apis/accesscontrollists/1234?token=$token&includeExtendedInfo=true*"
 
-            $mockResponse = Get-Acl -OrgConnection $org -SecurityNamespace $sn -SecurityToken $token -IncludeExtendedInfo
+            $mockResponse = Get-AzDoAcl -OrgConnection $org -SecurityNamespace $sn -SecurityToken $token -IncludeExtendedInfo
 
             $mockResponse | Should -BeLike $expectedPath
         }
@@ -52,7 +52,7 @@ Describe "PublicFunctions" {
             $token = '$/proj'
             $expectedPath = "$($OrgUri)/_apis/accesscontrollists/1234?token=$token&recurse=true&includeExtendedInfo=true*"
 
-            $mockResponse = Get-Acl -OrgConnection $org -SecurityNamespace $sn -SecurityToken $token -Recurse -IncludeExtendedInfo
+            $mockResponse = Get-AzDoAcl -OrgConnection $org -SecurityNamespace $sn -SecurityToken $token -Recurse -IncludeExtendedInfo
 
             $mockResponse | Should -BeLike $expectedPath
         }

@@ -218,7 +218,7 @@ function Get-ReleaseDefinition {
                 foreach ($releaseDefinition in $releaseDefinitions.value) {
 
                     $token = "$($Project.Id)/$($releaseDefinition.id)"
-                    $acls = Get-Acl -OrgConnection $OrgConnection `
+                    $acls = Get-AzDoAcl -OrgConnection $OrgConnection `
                         -SecurityNamespace $securityNamespace `
                         -SecurityToken $token `
                         -IncludeExtendedInfo -CacheResults

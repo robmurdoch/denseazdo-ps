@@ -7,7 +7,7 @@ function Get-Ace {
         Iterates the SecurityNames Actions bit-shifting their value with the ACEs Allow, Deny, EffectiveAllow, and EffectiveDeny values 
     .EXAMPLE
         $sn = Get-SecurityNamespace -OrgConnection $org | Where-Object { $PSItem.name -eq 'VersionControlItems' }
-        Get-Acl -OrgConnection $org -SecurityNamespace $sn | Select-Object -First 1 | ForEach-Object { 
+        Get-AzDoAcl -OrgConnection $org -SecurityNamespace $sn | Select-Object -First 1 | ForEach-Object { 
             Write-Output "Security for TFVC Path $($PSItem.token) $(if($PSItem.inheritPermissions) {'Inheriting from parent'})"
             Get-Ace -OrgConnection $org -SecurityNamespace $sn -Acl $PSItem | ForEach-Object {
                 Write-Output "Identity:$($PSItem.Identity)"
@@ -49,7 +49,7 @@ function Get-Ace {
         
         [Parameter(Mandatory = $true,
             ValueFromPipeline = $true,
-            HelpMessage = 'Reference to Acl obtained from Get-Acl')]
+            HelpMessage = 'Reference to Acl obtained from Get-AzDoAcl')]
         [System.Object]$Acl
     )
     process {

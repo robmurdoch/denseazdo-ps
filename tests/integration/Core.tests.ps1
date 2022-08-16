@@ -63,7 +63,7 @@ Describe "Core features" {
         }
     }
 
-    Context "Get-Acl" {
+    Context "Get-AzDoAcl" {
 
         It 'Queries Security service Access Control List api for VersionControlItems Security Namespace' {
            
@@ -71,7 +71,7 @@ Describe "Core features" {
             $project = $org | Get-Project -CacheResults | Where-Object { $PSItem.name -eq $DefaultProjectName }
             $token = "$/$($project.name)"
 
-            $results = Get-Acl -OrgConnection $org `
+            $results = Get-AzDoAcl -OrgConnection $org `
                 -SecurityNamespace $sn `
                 -SecurityToken $token `
                 -Recurse -CacheResults
@@ -83,7 +83,7 @@ Describe "Core features" {
            
             $sn = $org | Get-SecurityNamespace | Where-Object { $PSItem.name -eq 'CSS' }
 
-            $results = Get-Acl -OrgConnection $org `
+            $results = Get-AzDoAcl -OrgConnection $org `
                 -SecurityNamespace $sn `
                 -Recurse -CacheResults
 
@@ -96,7 +96,7 @@ Describe "Core features" {
         It 'Queries Security Access Control Entity Query api and Identities Read Identities api for VersionControlItems namespace' {
            
             $sn = Get-SecurityNamespace -OrgConnection $org | Where-Object { $PSItem.name -eq 'VersionControlItems' }
-            $acls = Get-Acl -OrgConnection $org -SecurityNamespace $sn
+            $acls = Get-AzDoAcl -OrgConnection $org -SecurityNamespace $sn
             $aces = Get-Ace -OrgConnection $org -SecurityNamespace $sn -Acl $acls[0]
             $aces.count | Should -BeGreaterThan 0
             $aces[0].Identity | Should -BeLike '*'
@@ -105,7 +105,7 @@ Describe "Core features" {
         It 'Queries Security Access Control Entity Query api and Identities Read Identities api for CSS namespace ' {
            
             $sn = Get-SecurityNamespace -OrgConnection $org | Where-Object { $PSItem.name -eq 'CSS' }
-            $acls = Get-Acl -OrgConnection $org -SecurityNamespace $sn
+            $acls = Get-AzDoAcl -OrgConnection $org -SecurityNamespace $sn
             $aces = Get-Ace -OrgConnection $org -SecurityNamespace $sn -Acl $acls[0]
             $aces.count | Should -BeGreaterThan 0
             $aces[0].Identity | Should -BeLike '*'

@@ -129,7 +129,7 @@ function Get-Tfvc {
     
             $rootSecurityToken = "$/$($project.name)"
 
-            $acls = Get-Acl -OrgConnection $OrgConnection `
+            $acls = Get-AzDoAcl -OrgConnection $OrgConnection `
                 -SecurityNamespace $securityNamespace `
                 -SecurityToken $rootSecurityToken `
                 -Recurse -IncludeExtendedInfo -CacheResults

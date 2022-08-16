@@ -256,7 +256,7 @@ function Get-BuildDefinition {
                 foreach ($buildDefinitions in $buildDefinitionss.value) {
 
                     $token = "$($Project.Id)/$($buildDefinitions.id)"
-                    $acls = Get-Acl -OrgConnection $OrgConnection `
+                    $acls = Get-AzDoAcl -OrgConnection $OrgConnection `
                         -SecurityNamespace $securityNamespace `
                         -SecurityToken $token `
                         -IncludeExtendedInfo -CacheResults
