@@ -61,21 +61,6 @@ Describe "PublicFunctions" {
             $mockResponse.uri | Should -BeLike $expectedUri
         }
         
-        It 'When IdFilter ParameterSetName derived and IncludeSecurity provided, Uri creation uses same strategy' {
-
-            Mock -CommandName Get-SecurityNamespace -MockWith { return @{ value = @(@{ name = 'Build' }) } }
-            Mock -CommandName Invoke-WebRequest -MockWith { return @{ value = @() } }
-            $project = @{ id = 1234 }
-            $Ids = 1
-            
-            $mockResponse = Get-BuildDefinition -OrgConnection $org `
-                -Project $project `
-                -DefinitionIds $Ids `
-                -IncludeSecurity
-
-            $mockResponse | Should -BeNullOrEmpty
-        }
-
         It 'When IdFilter ParameterSetName derived and IncludeAllPropertiies specified, includeAllProperties query included' {
 
             Mock -CommandName Invoke-WebRequest -MockWith { Write-Output @{
