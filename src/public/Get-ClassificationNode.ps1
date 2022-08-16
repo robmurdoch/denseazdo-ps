@@ -58,7 +58,7 @@ function Get-ClassificationNode {
 
         [Parameter(ParameterSetName = 'Node', Mandatory = $true)]
         [Parameter(ParameterSetName = 'Security', Mandatory = $true)]
-        [Parameter(ParameterSetName = 'IDs', Mandatory = $true)]
+        [Parameter(ParameterSetName = 'IDs')]
         [ValidateSet("areas", "iterations")]
         [String]$StructureGroup,
 

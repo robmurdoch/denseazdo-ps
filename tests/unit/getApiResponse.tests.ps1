@@ -14,6 +14,7 @@ Describe "PrivateFunctions" {
         
         $org = getOrgConnection -Uri $OrgUri
         $org.ApiVersion = $org.ApiVersions[0]
+        $org.Headers = @{}
     }
  
     Context "getApiResponse" {
@@ -22,7 +23,7 @@ Describe "PrivateFunctions" {
            
             Mock Invoke-RestMethod { return $Uri }
 
-            $responseUri = getApiResponse -uri $Uri -CacheName 'blah'
+            $responseUri = getApiResponse -OrgConnection $org -uri $Uri -CacheName 'blah'
 
             $responseUri | Should -BeLike $Uri             
         }
