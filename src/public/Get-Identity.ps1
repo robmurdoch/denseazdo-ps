@@ -5,7 +5,17 @@ function Get-Identity {
     .DESCRIPTION
         Returns the Identity of the provided Descripter
     .EXAMPLE
-        Get-Identity -OrgConnection $org -Descriptor
+        Get-Identity -OrgConnection $org -Descriptor 'Microsoft.TeamFoundation.Identity;S-1-9-1551374245-1204400969-2402986413-2179408616-0-0-0-0-1'
+
+        Gets the well-known 'Project Collection Administrators' identity
+    .EXAMPLE
+        Get-Identity -OrgConnection $org -FilterValue 'Project Collection Valid Users' -SearchFilter General -Verbose
+
+        Gets the well-known 'Project Collection Valid Users' group identity
+    .EXAMPLE
+        Get-Identity -OrgConnection $org -FilterValue 'Administrator' -SearchFilter DisplayName -Verbose
+
+        Gets all identities named Administrator
     .INPUTS
         OrgConnection can be piped to this cmdlet
     .OUTPUTS
@@ -17,7 +27,6 @@ function Get-Identity {
     param (
         [Parameter(ParameterSetName = 'Item',
             Mandatory = $true,
-            ValueFromPipeline = $true,
             HelpMessage = 'Reference to a Connection returned from call to Connect-AzureDevOps')]
         [Parameter(ParameterSetName = 'Search',
             Mandatory = $true)]

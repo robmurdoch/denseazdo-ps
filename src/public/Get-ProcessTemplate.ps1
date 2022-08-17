@@ -1,11 +1,17 @@
 function Get-ProcessTemplate {
     <#
     .SYNOPSIS
-        Provides access to the Core Processs List and Get REST API.
+        Provides access to the Core -> Processs -> List and Get REST APIs.
     .DESCRIPTION        
         Returns list of processes configured in the organization.
     .EXAMPLE
-        
+        Get-ProcessTemplate -OrgConnection $org
+
+        Get all process templates in an organization (collection).
+    .EXAMPLE
+        Get-ProcessTemplate -OrgConnection $org -Id '27450541-8e31-4150-9947-dc59f998fc01' -Verbose
+
+        Get a specific process templates by id within an organization (collection).
     .INPUTS
         OrgConnection can be piped to this cmdlet
     .OUTPUTS
@@ -15,17 +21,17 @@ function Get-ProcessTemplate {
     #>
     [CmdletBinding(DefaultParameterSetName = 'List')]
     param (
-        [Parameter(Mandatory = $true,
-            ValueFromPipeline = $true,
-            ParameterSetName = 'List',
+        [Parameter(ParameterSetName = 'List',
+            Mandatory = $true,
+            ValueFromPipeline = $true,            
             HelpMessage = 'Reference to Connection object returned from call to Connect-AzureDevOps')]
             [Parameter(ParameterSetName = 'Item')]
             [Alias("O","Org")]
             [System.Object]$OrgConnection,
     
-            [Parameter(Mandatory = $true,
+            [Parameter(ParameterSetName = 'Item',
+                Mandatory = $true,
                 ValueFromPipelineByPropertyName = $true,
-                ParameterSetName = 'Item',
                 HelpMessage = 'Enter the ID or Name of desired process')]
             [string]$Id,
         
@@ -37,7 +43,7 @@ function Get-ProcessTemplate {
     process {
 
         if ($PSBoundParameters.ContainsKey('Id') -and $Id.Length -gt 0) {
-            $path = '_apis/process/processes/$($Id)'
+            $path = "_apis/process/processes/$Id"
         }
         else {
             $path = '_apis/process/processes'

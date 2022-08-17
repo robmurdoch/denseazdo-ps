@@ -4,9 +4,27 @@ function Get-Ace {
         Unwraps an Access Control List (ACL) and returns all of its Access Control Entries (ACE) 
     .DESCRIPTION
         Retrieves the Identity for Each Access Control Entry (ACE) in an Access Control List (ACL)
-        Iterates the SecurityNames Actions bit shifting their value with the ACEs Allow, Deny, EffectiveAllow, and EffectiveDeny values 
+        Iterates the SecurityNames Actions bit-shifting their value with the ACEs Allow, Deny, EffectiveAllow, and EffectiveDeny values 
     .EXAMPLE
-        Get-Ace -OrgConnection $org -SecurityNamespace $vcns -Acl $acl
+        $sn = Get-SecurityNamespace -OrgConnection $org | Where-Object { $PSItem.name -eq 'VersionControlItems' }
+        Get-AzDoAcl -OrgConnection $org -SecurityNamespace $sn | Select-Object -First 1 | ForEach-Object { 
+            Write-Output "Security for TFVC Path $($PSItem.token) $(if($PSItem.inheritPermissions) {'Inheriting from parent'})"
+            Get-Ace -OrgConnection $org -SecurityNamespace $sn -Acl $PSItem | ForEach-Object {
+                Write-Output "Identity:$($PSItem.Identity)"
+                Write-Output "Manage permissions:$($PSItem.'Manage permissions')"
+                Write-Output "Manage branch:$($PSItem.'Manage branch')"
+                Write-Output "Check in:$($PSItem.'Check in')"
+                Write-Output "Administer labels:$($PSItem.'Administer labels')"
+                Write-Output "Label:$($PSItem.'Label')"
+                Write-Output "Lock:$($PSItem.'Lock')"
+                Write-Output "Merge:$($PSItem.'Merge')"
+                Write-Output "Check in other users' changes:$($PSItem."Check in other users' changes")"
+                Write-Output "Undo other users' changes:$($PSItem."Undo other users' changes")"
+                Write-Output ''
+            }
+        }
+
+        Gets the ACL for Root ($) TFVC node, reports if it inherits permissions, then each ACE's identity and permissions
     .INPUTS
         ACL can be piped to cmdlet
     .OUTPUTS
@@ -31,7 +49,7 @@ function Get-Ace {
         
         [Parameter(Mandatory = $true,
             ValueFromPipeline = $true,
-            HelpMessage = 'Reference to Acl obtained from Get-Acl')]
+            HelpMessage = 'Reference to Acl obtained from Get-AzDoAcl')]
         [System.Object]$Acl
     )
     process {

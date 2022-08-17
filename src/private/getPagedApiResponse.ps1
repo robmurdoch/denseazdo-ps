@@ -15,10 +15,10 @@ function getPagedApiResponse {
 
         do {
             $pageQuery = @()
-            if ($PageSize){
+            if ($PageSize) {
                 $pageQuery += "`$top=$PageSize"
             }
-            else{
+            else {
                 $pageQuery += "`$top=$($global:AzDoPageSizePreference)"
             }
 
@@ -46,7 +46,7 @@ function getPagedApiResponse {
                     -Path $Path -Query $Query -PageQuery $pageQuery
                 Write-Verbose $uri
                 
-                if ($OrgConnection.Headers) {
+                if ($OrgConnection.Headers.ContainsKey('Authentication')) {
                     $webResponse = Invoke-WebRequest `
                         -Method Get `
                         -Uri $Uri `
@@ -73,7 +73,7 @@ function getPagedApiResponse {
                     $continuationToken = $webResponse.Headers['X-MS-ContinuationToken']
                 }
             }
-            else{
+            else {
                 # This supports unit testing CmdLets
                 # In the event something unexpected is returned, caller can inspect the entire response.
                 Write-Output $webResponse

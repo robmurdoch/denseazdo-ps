@@ -22,10 +22,10 @@ Describe "PublicFunctions" {
     Context "Get-Tfvc" {
 
         It 'When only org and project provided, does not include optional parameters' {
-           
+            
             Mock -CommandName Invoke-RestMethod -MockWith { return @{ value = $Uri } }
             $project = @{ id = 1234 }
-            $expectedPath = "$($OrgUri)/$($project.id)/_apis/tfvc/items?api-version*"
+            $expectedPath = "$($OrgUri)/$($project.id)/_apis/tfvc/items?scopePath=$/&recursionLevel=None&api-version*"
             
             $mockResponse = Get-Tfvc -OrgConnection $org -Project $project
 
@@ -37,7 +37,7 @@ Describe "PublicFunctions" {
             Mock -CommandName Invoke-RestMethod -MockWith { return @{ value = $Uri } }
             $project = @{ id = 1234 }
             $scopePath = '$/scratch/folder/subfolder'
-            $expectedPath = "$($OrgUri)/$($project.id)/_apis/tfvc/items?scopePath=$scopePath&api-version*"
+            $expectedPath = "$($OrgUri)/$($project.id)/_apis/tfvc/items?scopePath=$scopePath&recursionLevel=None&api-version*"
             
             $mockResponse = Get-Tfvc -OrgConnection $org -Project $project -ScopePath $scopePath
 
@@ -49,7 +49,7 @@ Describe "PublicFunctions" {
             Mock -CommandName Invoke-RestMethod -MockWith { return @{ value = $Uri } }
             $project = @{ id = 1234 }
             $recursionLevel = 'full'
-            $expectedPath = "$($OrgUri)/$($project.id)/_apis/tfvc/items?recursionLevel=$recursionLevel&api-version*"
+            $expectedPath = "$($OrgUri)/$($project.id)/_apis/tfvc/items?scopePath=$/&recursionLevel=$recursionLevel&api-version*"
             
             $mockResponse = Get-Tfvc -OrgConnection $org -Project $project -RecursionLevel $recursionLevel
 
@@ -61,7 +61,7 @@ Describe "PublicFunctions" {
             Mock -CommandName Invoke-RestMethod -MockWith { return @{ value = $Uri } }
             $project = @{ id = 1234 }
             $includeLinks = 'includeLinks=true'
-            $expectedPath = "$($OrgUri)/$($project.id)/_apis/tfvc/items?$includeLinks&api-version*"
+            $expectedPath = "$($OrgUri)/$($project.id)/_apis/tfvc/items?scopePath=$/&recursionLevel=None&$includeLinks&api-version*"
             
             $mockResponse = Get-Tfvc -OrgConnection $org -Project $project -IncludeLinks
 
@@ -74,7 +74,7 @@ Describe "PublicFunctions" {
             $project = @{ id = 1234 }
             $includeLinks = 'includeLinks=true'
             $recursionLevel = 'full'
-            $expectedPath = "$($OrgUri)/$($project.id)/_apis/tfvc/items?recursionLevel=$recursionLevel&$includeLinks&api-version*"
+            $expectedPath = "$($OrgUri)/$($project.id)/_apis/tfvc/items?scopePath=$/&recursionLevel=$recursionLevel&$includeLinks&api-version*"
             
             $mockResponse = Get-Tfvc -OrgConnection $org -Project $project -RecursionLevel $recursionLevel -IncludeLinks
 
