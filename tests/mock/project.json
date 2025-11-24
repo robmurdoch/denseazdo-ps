@@ -1,0 +1,36 @@
+{
+  "id": "160425a1-48f3-423f-9c86-997a8860b023",
+  "name": "Scratch",
+  "url": "https://azdo1.experiment.net/DefaultCollection/_apis/projects/160425a1-48f3-423f-9c86-997a8860b023",
+  "state": "wellFormed",
+  "capabilities": {
+    "processTemplate": {
+      "templateName": "Basic",
+      "templateTypeId": "b8a3a935-7e91-48b8-a94c-606d37c3e9f2"
+    },
+    "versioncontrol": {
+      "sourceControlType": "Git",
+      "gitEnabled": "True",
+      "tfvcEnabled": "True"
+    }
+  },
+  "revision": 17,
+  "_links": {
+    "self": {
+      "href": "https://azdo1.experiment.net/DefaultCollection/_apis/projects/160425a1-48f3-423f-9c86-997a8860b023"
+    },
+    "collection": {
+      "href": "https://azdo1.experiment.net/_apis/projectCollections/0d9c5d3e-75f6-4327-85e7-9efd1a0e5910"
+    },
+    "web": {
+      "href": "https://azdo1.experiment.net/DefaultCollection/Scratch"
+    }
+  },
+  "visibility": "private",
+  "defaultTeam": {
+    "id": "cf9016e3-9fe5-4a81-ac35-dfbf102ddaad",
+    "name": "Scratch Team",
+    "url": "https://azdo1.experiment.net/DefaultCollection/_apis/projects/160425a1-48f3-423f-9c86-997a8860b023/teams/cf9016e3-9fe5-4a81-ac35-dfbf102ddaad"
+  },
+  "lastUpdateTime": "2021-08-18T23:20:17.547Z"
+}
